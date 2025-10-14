@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Editar producto — InventarioLab</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><img src="img/logo.png" alt="InventarioLab"><h1>InventarioLab</h1></div>
+      <nav class="main-nav" aria-label="Navegación principal"><a href="productos-listado.html">Listado</a><a href="productos-alta.html">Alta</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Editar producto</h2>
+      <p class="small">ID interno (readonly) y ejemplo de campo deshabilitado por permisos.</p>
+
+      <form method="post" action="#">
+        <!-- ID interno: readonly -> se envía al servidor -->
+        <div class="form-row">
+          <label for="id">ID interno</label>
+          <input id="id" name="id" type="text" value="12345" readonly>
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <div class="form-row">
+              <label for="sku_e">SKU</label>
+              <input id="sku_e" name="sku" type="text" required pattern="[A-Za-z0-9\-]+" value="ABC-123">
+            </div>
+            <div class="form-row">
+              <label for="nombre_e">Nombre</label>
+              <input id="nombre_e" name="nombre" type="text" required value="Taladro X">
+            </div>
+            <div class="form-row">
+              <label for="categoria_e">Categoría</label>
+              <select id="categoria_e" name="categoria" required>
+                <option>Herramientas</option>
+                <option>Hogar</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="proveedor_e">Proveedor (deshabilitado por ejemplo)</label>
+              <!-- disabled: se muestra pero NO se enviará en el form -->
+              <select id="proveedor_e" name="proveedor" disabled>
+                <option>Proveedor A</option>
+                <option>Proveedor B</option>
+              </select>
+              <p class="field-help">Este campo está bloqueado por permisos del rol (disabled -> no se envía).</p>
+            </div>
+          </div>
+
+          <div>
+            <fieldset>
+              <legend>Precios y stock</legend>
+              <div class="form-row">
+                <label for="precio_e">Precio unitario (ARS)</label>
+                <input id="precio_e" name="precio" type="number" required min="0" step="0.01" value="1250.00">
+              </div>
+              <div class="form-row">
+                <label for="stock_actual_e">Stock actual</label>
+                <input id="stock_actual_e" name="stock_actual" type="number" min="0" step="1" value="5">
+              </div>
+              <div class="form-row">
+                <label for="stock_minimo_e">Stock mínimo</label>
+                <input id="stock_minimo_e" name="stock_minimo" type="number" min="0" step="1" value="2">
+              </div>
+              <div class="form-row">
+                <label>Estado</label>
+                <select name="estado">
+                  <option value="activo" selected>Activo</option>
+                  <option value="inactivo">Inactivo</option>
+                </select>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:18px;">
+          <button class="btn" type="submit">Guardar cambios</button>
+          <button class="btn btn-muted" type="reset">Reset</button>
+        </div>
+      </form>
+
+    </section>
+  </main>
+
+  <footer class="container small" style="padding:18px 0;">
+    <p>Laboratorio de Programación - 6° G</p>
+  </footer>
+</body>
+</html>

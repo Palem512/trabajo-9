@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Listado de productos — InventarioLab</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><img src="img/logo.png" alt="InventarioLab"><h1>InventarioLab</h1></div>
+      <nav class="main-nav" aria-label="Navegación principal"><a href="productos-listado.html">Listado</a><a href="productos-alta.html">Alta</a><a href="contacto.html">Contacto</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Listado de productos</h2>
+      <p class="small">Usá los filtros para refinar la búsqueda. (Sin JS: el form usa action="#" para simular búsqueda)</p>
+
+      <form method="get" action="#" class="card" style="margin-bottom:16px;">
+        <div class="form-grid">
+          <div>
+            <label for="q">Buscar por nombre o SKU</label>
+            <input id="q" name="q" type="text" placeholder="Taladro, ABC-123">
+          </div>
+          <div>
+            <label for="cat_filter">Categoría</label>
+            <select id="cat_filter" name="categoria">
+              <option value="">Todas</option>
+              <option>Electrónica</option>
+              <option>Herramientas</option>
+            </select>
+          </div>
+          <div>
+            <label for="estado_filter">Estado</label>
+            <select id="estado_filter" name="estado">
+              <option value="">Todos</option>
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>
+        <div class="actions" style="margin-top:12px;">
+          <button class="btn" type="submit">Buscar</button>
+          <a class="btn btn-muted" href="productos-alta.html">Alta de producto</a>
+          <a class="btn" href="#">Exportar (simulado)</a>
+        </div>
+      </form>
+
+      <div style="overflow:auto;">
+        <table class="table" aria-describedby="tabla-descripcion">
+          <caption id="tabla-descripcion" class="small">Tabla con productos — columnas: SKU, Nombre, Categoría, Stock, Stock mín., Precio, Estado, Acciones</caption>
+          <thead>
+            <tr><th>SKU</th><th>Nombre</th><th>Categoría</th><th>Stock</th><th>Stock mín.</th><th>Precio</th><th>Estado</th><th>Acciones</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ABC-123</td>
+              <td>Taladro X</td>
+              <td>Herramientas</td>
+              <td>5</td>
+              <td>2</td>
+              <td>$1.250,00</td>
+              <td>Activo</td>
+              <td class="actions-cell"><a href="productos-editar.html">Editar</a></td>
+            </tr>
+            <tr>
+              <td>TV-456</td>
+              <td>Televisor 42"</td>
+              <td>Electrónica</td>
+              <td>2</td>
+              <td>1</td>
+              <td>$55.000,00</td>
+              <td>Activo</td>
+              <td class="actions-cell"><a href="productos-editar.html">Editar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kv" style="margin-top:12px; justify-content:space-between;">
+        <div>
+          <label for="per_page">Ítems por página</label>
+          <select id="per_page"><option>10</option><option>25</option><option>50</option></select>
+        </div>
+        <nav aria-label="Paginación" class="small">
+          <a href="#">«</a> 1 2 3 <a href="#">»</a>
+        </nav>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="container small" style="padding:18px 0;">
+    <p>Laboratorio de Programación - 6° G</p>
+  </footer>
+</body>
+</html>

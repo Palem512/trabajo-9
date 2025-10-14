@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contacto — InventarioLab</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><img src="img/logo.png" alt="InventarioLab"><h1>InventarioLab</h1></div>
+      <nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="productos-listado.html">Productos</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Contacto / Soporte</h2>
+      <p class="small">Envíanos consultas, sugerencias o reportes de stock.</p>
+
+      <form method="post" action="#">
+        <div class="form-row">
+          <label for="nombre_contacto">Nombre</label>
+          <input id="nombre_contacto" name="nombre" type="text" required minlength="2">
+        </div>
+        <div class="form-row">
+          <label for="email_contacto">Email</label>
+          <input id="email_contacto" name="email" type="email" required>
+        </div>
+        <div class="form-row">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto" required>
+            <option value="">-- Seleccione --</option>
+            <option value="consulta">Consulta técnica</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="error_stock">Error de stock</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required minlength="10"></textarea>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Enviar</button>
+          <a class="btn btn-muted" href="index.html">Cancelar</a>
+        </div>
+      </form>
+
+    </section>
+  </main>
+
+  <footer class="container small" style="padding:18px 0;">
+    <p>Laboratorio de Programación - 6° G</p>
+  </footer>
+</body>
+</html>

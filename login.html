@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Iniciar sesión — InventarioLab</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><img src="img/logo.png" alt="InventarioLab"><h1>InventarioLab</h1></div>
+      <nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a></nav>
+    </div>
+  </header>
+
+  <main class="container login-page">
+    <div class="login-box card" role="region" aria-labelledby="login-title">
+      <div class="login-hero">
+        <h2 id="login-title">Iniciar sesión</h2>
+        <p class="small">Accede con tu correo para continuar</p>
+      </div>
+
+      <form method="post" action="#" novalidate>
+        <div class="form-row">
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" required placeholder="usuario@empresa.com" autofocus>
+        </div>
+        <div class="form-row">
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" required minlength="6">
+        </div>
+        <div class="form-row kv">
+          <label><input type="checkbox" name="remember"> Recordarme</label>
+          <a href="#" class="small" style="margin-left:auto">¿Olvidaste tu contraseña?</a>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Entrar</button>
+          <a class="btn btn-muted" href="index.html">Volver</a>
+        </div>
+      </form>
+
+    </div>
+  </main>
+
+  <footer class="container small" style="padding:18px 0;">
+    <p>Laboratorio de Programación - 6° G</p>
+  </footer>
+</body>
+</html>

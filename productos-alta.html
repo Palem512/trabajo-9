@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alta de producto — InventarioLab</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><img src="img/logo.png" alt="InventarioLab"><h1>InventarioLab</h1></div>
+      <nav class="main-nav" aria-label="Navegación principal"><a href="productos-listado.html">Listado</a><a href="productos-alta.html">Alta</a><a href="contacto.html">Contacto</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Alta de producto</h2>
+      <p class="small">Completa los datos para registrar un nuevo producto. Todos los campos marcados son obligatorios.</p>
+
+      <form method="post" action="#">
+        <div class="form-grid">
+          <div>
+            <div class="form-row">
+              <label for="sku">SKU</label>
+              <input id="sku" name="sku" type="text" required pattern="[A-Za-z0-9\-]+" minlength="3" maxlength="20" placeholder="ABC-123">
+              <p class="field-help">Formato alfanumérico; guiones permitidos.</p>
+            </div>
+            <div class="form-row">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" required minlength="2" maxlength="100">
+            </div>
+            <div class="form-row">
+              <label for="categoria">Categoría</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">-- Seleccione --</option>
+                <option>Electrónica</option>
+                <option>Herramientas</option>
+                <option>Hogar</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="proveedor">Proveedor</label>
+              <select id="proveedor" name="proveedor" required>
+                <option value="">-- Seleccione --</option>
+                <option>Proveedor A</option>
+                <option>Proveedor B</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <fieldset>
+              <legend>Precios y stock</legend>
+              <div class="form-row">
+                <label for="precio">Precio unitario (ARS)</label>
+                <input id="precio" name="precio" type="number" required min="0" step="0.01" placeholder="0.00">
+              </div>
+              <div class="form-row">
+                <label for="stock_actual">Stock actual</label>
+                <input id="stock_actual" name="stock_actual" type="number" required min="0" step="1" value="0">
+              </div>
+              <div class="form-row">
+                <label for="stock_minimo">Stock mínimo</label>
+                <input id="stock_minimo" name="stock_minimo" type="number" required min="0" step="1" value="0">
+              </div>
+              <div class="form-row">
+                <label>Estado</label>
+                <label><input type="radio" name="estado" value="activo" checked required> Activo</label>
+                <label><input type="radio" name="estado" value="inactivo"> Inactivo</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:18px;">
+          <button class="btn" type="submit">Guardar</button>
+          <button class="btn btn-muted" type="reset">Reset</button>
+        </div>
+      </form>
+
+    </section>
+  </main>
+
+  <footer class="container small" style="padding:18px 0;">
+    <p>Laboratorio de Programación - 6° G</p>
+  </footer>
+</body>
+</html>
